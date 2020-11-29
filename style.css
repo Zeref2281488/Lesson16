@@ -1,0 +1,58 @@
+body{
+    background: #424242;
+    font-family: Open Sans;
+}
+.f-block{
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
+    height: 309px;
+    width: 176px;
+}
+.check-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.form-h2{
+    font-weight: 600;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 21px auto 20px 30px;
+}
+.form-label{
+    font-size: 14px;
+    margin-left: 30px;
+}
+.def-checkbox{
+    display: none;
+}
+.def-checkbox + .custom-check{
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #CCB26E;
+    box-sizing: border-box;
+    border-radius: 3px;
+    text-align: center;
+}
+.def-checkbox + .custom-check::before{
+    content: url('/files/Rectangle\ 99.png');
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+.def-checkbox:checked + .custom-check::before{
+    opacity: 1;
+}
+.custom-check{
+    padding-left: 15px;
+}
