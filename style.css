@@ -2,13 +2,20 @@ body{
     background: #424242;
     font-family: Open Sans;
 }
+.main{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 70px;
+    margin-left: 92px;
+}
 .f-block{
     display: flex;
     flex-direction: column;
     background: #fff;
     border-radius: 10px;
-    height: 309px;
-    width: 176px;
+    min-height: 309px;
+    min-width: 176px;
 }
 .check-form{
     display: flex;
@@ -57,4 +64,12 @@ body{
 }
 .def-checkbox:checked + .custom-check::before{
     opacity: 1;
+}
+.s-block{
+    min-width: 176px;
+    min-height: 293px;
+}
+.select1{
+    min-width: 176px;
+    margin-left: 58px;
 }

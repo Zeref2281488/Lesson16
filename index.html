@@ -3,45 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/fonts/fonts.css">
+    <link rel="stylesheet" href="choices.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="choices.min.js"></script>
     <title>Lesson16</title>
 </head>
 <body>
-    <div class="f-block">
-        <h2 class="form-h2">Категории</h2>
-        <form class="check-form" action="">
-        <label class="form-label" for="box1">
-            <input type="checkbox" class="def-checkbox" name="box1" id="box1">
-            <span class="custom-check"></span>
-            Динозавры
-        </label>
-        <label class="form-label" for="box2">
-            <input type="checkbox" class="def-checkbox" name="box2" id="box2">
-            <span class="custom-check"></span>
-            Медведи
-        </label>
-        <label class="form-label" for="box3">
-            <input type="checkbox" class="def-checkbox" name="box3" id="box3">
-            <span class="custom-check"></span>
-            Косули
-        </label>
-        <label class="form-label" for="box4">
-            <input type="checkbox" class="def-checkbox" name="box4" id="box4">
-            <span class="custom-check"></span>
-            Лисы
-        </label>
-        <label class="form-label" for="box5">
-            <input type="checkbox" class="def-checkbox" name="box5" id="box5">
-            <span class="custom-check"></span>
-            Волки
-        </label>
-        <label class="form-label" for="box6">
-            <input type="checkbox" class="def-checkbox" name="box6" id="box6">
-            <span class="custom-check"></span>
-            Олени и лоси
-        </label>
-    </form>
+    <div class="main">
+        <div class="f-block">
+            <h2 class="form-h2">Категории:</h2>
+            <form class="check-form" action="">
+            <label class="form-label" for="box1">
+                <input type="checkbox" class="def-checkbox" name="box1" id="box1">
+                <span class="custom-check"></span>
+                Динозавры
+            </label>
+            <label class="form-label" for="box2">
+                <input type="checkbox" class="def-checkbox" name="box2" id="box2">
+                <span class="custom-check"></span>
+                Медведи
+            </label>
+            <label class="form-label" for="box3">
+                <input type="checkbox" class="def-checkbox" name="box3" id="box3">
+                <span class="custom-check"></span>
+                Косули
+            </label>
+            <label class="form-label" for="box4">
+                <input type="checkbox" class="def-checkbox" name="box4" id="box4">
+                <span class="custom-check"></span>
+                Лисы
+            </label>
+            <label class="form-label" for="box5">
+                <input type="checkbox" class="def-checkbox" name="box5" id="box5">
+                <span class="custom-check"></span>
+                Волки
+            </label>
+            <label class="form-label" for="box6">
+                <input type="checkbox" class="def-checkbox" name="box6" id="box6">
+                <span class="custom-check"></span>
+                Олени и лоси
+            </label>
+            </form>
+        </div>
+        <div class="s-block">
+            <select name="select1" id="selectorCustom" class="select1">
+                <option value="1">Материал</option>
+                <option value="2">Древесина</option>
+                <option value="3">Металл</option>
+                <option value="4">Камень</option>
+                <option value="5">Пластик</option>
+                <option value="6">Композитный</option>
+                <option value="7">Гипс</option>
+            </select>
+            <script>
+                const elem = document.querySelector('#selectorCustom');
+                const choices = new Choices(elem, {
+                    searchEnabled: false
+                });
+            </script>
+        </div>
     </div>
 </body>
 </html>
