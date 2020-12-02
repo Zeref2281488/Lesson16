@@ -63,12 +63,10 @@
                     searchEnabled: false
                 });
                 window.addEventListener('DOMContentLoaded', function(){
-                    for (var index = 0; index < 6; index++) {
-                        document.getElementsByClassName('choices__inner')[index].addEventListener("click", function(){
+                        document.getElementsByClassName('choices__inner')[0].addEventListener("click", function(){
                             document.querySelector('#s-block').classList.toggle('s-active');
                             console.log(index);   
                         }); 
-                    }
                 });
             </script>
         </div>
