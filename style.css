@@ -83,6 +83,9 @@ body{
 }
 .choices__inner{
     padding: 0px;
+    height: 39px;
+    min-height: unset;
+    padding-bottom: 0px !important;
 }
 .choices__item--selectable{
     width: 100%;
