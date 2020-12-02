@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="choices.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="choices.min.js"></script>
+    
     <title>Lesson16</title>
 </head>
 <body>
@@ -46,9 +47,9 @@
             </label>
             </form>
         </div>
-        <div class="s-block">
+        <div class="s-block" id="s-block">
             <select name="select1" id="selectorCustom" class="select1">
-                <option value="1">Материал</option>
+                <option value="1" id="f-select">Материал</option>
                 <option value="2">Древесина</option>
                 <option value="3">Металл</option>
                 <option value="4">Камень</option>
@@ -61,10 +62,14 @@
                 const choices = new Choices(elem, {
                     searchEnabled: false
                 });
-                document.querySelector('#selectorCustom').addEventListener('click', function(){
-                    document.getElementsByClassName('s-block')[0].className += 's-active';
-                    console.log('kek');   
-                })
+                window.addEventListener('DOMContentLoaded', function(){
+                    for (var index = 0; index < 6; index++) {
+                        document.getElementsByClassName('choices__list')[index].addEventListener("click", function(){
+                            document.querySelector('#s-block').classList.toggle('s-active');
+                            console.log(index);   
+                        }); 
+                    }
+                });
             </script>
         </div>
     </div>
