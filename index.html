@@ -49,7 +49,7 @@
         </div>
         <div class="s-block" id="s-block">
             <select name="select1" id="selectorCustom" class="select1">
-                <option value="1" id="f-select">Материал</option>
+                <option value="1">Материал</option>
                 <option value="2">Древесина</option>
                 <option value="3">Металл</option>
                 <option value="4">Камень</option>
@@ -61,12 +61,6 @@
                 const elem = document.querySelector('#selectorCustom');
                 const choices = new Choices(elem, {
                     searchEnabled: false
-                });
-                window.addEventListener('DOMContentLoaded', function(){
-                        document.getElementsByClassName('choices__inner')[0].addEventListener("click", function(){
-                            document.querySelector('#s-block').classList.toggle('s-active');
-                            console.log(index);   
-                        }); 
                 });
             </script>
         </div>

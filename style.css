@@ -33,6 +33,7 @@ body{
     margin-left: 30px;
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 .def-checkbox{
     display: none;
@@ -65,28 +66,49 @@ body{
     opacity: 1;
 }
 .s-block{
-    min-width: 176px;
-    height: 39px;
+    width: 176px;
     margin-left: 58px;
-    overflow: hidden;
     border-radius: 10px;
-}
-.s-active{
-    height: auto;
+    height: 293px;
 }
 .select1{
     font-weight: 400;
     font-style: normal;
     font-size: 14px;
-    min-width: 176px;
-    margin-left: 58px;
 }
 .choices__inner{
-    padding: 0px;
-    height: 39px;
     min-height: unset;
-    padding-bottom: 0px !important;
+    max-height: 39px;
+    padding: 9px 0px 11px 0px !important;
+    border: 1px solid #CCB26E !important;
+    border-radius: 10px;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    width: 176px;
+    box-sizing: border-box;
+}
+.choices__list--single{
+    width: 146px;
+    max-height: 39px;
+    padding: 0px !important;
+}
+.choices__item{
+    padding: 0px 0px 20px 15px !important;
 }
 .choices__item--selectable{
-    width: 100%;
+    width: 116px;
+    padding-right: 0px !important;
+    font-size: 14px;
+    line-height: 19px;
+}
+.choices__item--selectable:after{
+    display: none;
+}
+.choices__list--dropdown{
+    width: 176px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #CCB26E !important;
+    overflow: hidden;
+    box-sizing: border-box;
 }
