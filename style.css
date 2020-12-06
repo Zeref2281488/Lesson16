@@ -78,7 +78,7 @@ body{
 }
 .choices__inner{
     min-height: unset;
-    max-height: 39px;
+    height: 39px;
     padding: 9px 0px 11px 0px !important;
     border: 1px solid #CCB26E !important;
     border-radius: 10px;
@@ -98,8 +98,7 @@ body{
 .choices__item--selectable{
     width: 116px;
     padding-right: 0px !important;
-    font-size: 14px;
-    line-height: 19px;
+    line-height: 14px;
 }
 .choices__item--selectable:after{
     display: none;
