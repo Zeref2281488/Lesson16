@@ -81,11 +81,12 @@ body{
     height: 39px;
     padding: 9px 0px 11px 0px !important;
     border: 1px solid #CCB26E !important;
-    border-radius: 10px;
+    border-radius: 10px !important;
     border-top-left-radius: 10px !important;
     border-top-right-radius: 10px !important;
     width: 176px;
     box-sizing: border-box;
+    z-index: 10 !important;
 }
 .choices__list--single{
     width: 146px;
@@ -107,10 +108,12 @@ body{
     width: 176px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    margin-top: -9px;
+    padding-top: 29px;
     border: 1px solid #CCB26E !important;
     overflow: hidden;
     box-sizing: border-box;
 }
 .choices__list--dropdown .choices__placeholder{
-  display: none;
+    display: none;
 }
