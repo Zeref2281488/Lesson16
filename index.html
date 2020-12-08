@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="choices.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="choices.min.js"></script>
-    
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
     <title>Lesson16</title>
 </head>
 <body>
@@ -57,13 +57,33 @@
                 <option value="6">Композитный</option>
                 <option value="7">Гипс</option>
             </select>
-            <script>
+            <script type="text/javascript">
                 const elem = document.querySelector('#selectorCustom');
                 const choices = new Choices(elem, {
                     searchEnabled: false
                 });
+                ymaps.ready(init);
+                function init(){
+                    var myMap = new ymaps.Map("map", {
+                        center: [48.87254778695693,2.3532852268447613],
+                        zoom: 11
+                    });
+                    myPlacemark = new ymaps.Placemark([48.87220188179151,2.3542266822090046],{
+                        hintContent: 'Собственный значок метки',
+                        balloonContent: 'Это красивая метка'
+                    },
+                    {
+                        iconLayout: 'default#image',
+                        iconImageHref: 'files/Subtract.png',
+                        iconImageSize: [28, 40],
+                        iconContentOffset: [15, 15]
+                    });
+                    myMap.geoObjects
+                        .add(myPlacemark);
+                }
             </script>
         </div>
+        <div id="map" class="map"></div>
     </div>
 </body>
 </html>
