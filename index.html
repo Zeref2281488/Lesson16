@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <script src="choices.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="inputmask.min.js"></script>
+    <script src="just-validate.min.js"></script>
     <title>Lesson16</title>
 </head>
 <body>
@@ -80,10 +84,46 @@
                     });
                     myMap.geoObjects
                         .add(myPlacemark);
+                    
+                    var selector = document.querySelector("input[type='tel']");
+                    var im = new Inputmask("+7 (999)-999-99-99");
+                    im.mask(selector);
+
+                    new JustValidate('.form',{
+                        rules:{
+                            name: {
+                                required: true,
+                                minLength: 2,
+                                maxLength: 15
+                            },
+                            tel: {
+                                required: true,
+                                function: (name, value) => {
+                                    const phone = selector.inputmask.unmaskedvalue();
+                                    return Number(phone) && phone.length == 10;
+                                }
+                            },
+                            mail: {
+                                required: true,
+                                email: true
+                            }
+                        }
+                    });
                 }
             </script>
         </div>
         <div id="map" class="map"></div>
+        <div class="bar" data-simplebar>
+            Сложно сказать, почему многие известные личности представлены в исключительно положительном свете. Лишь активно развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы вынуждены отталкиваться от того, что высокотехнологичная концепция общественного уклада представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое развитие, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для первоочередных требований.
+        </div>
+        <div class="form-block">
+            <form action="" class="form">
+                <input name="Имя" type="text" placeholder="Имя*" data-validate-field="name" class="form-input">
+                <input name="Телефон" type="tel" placeholder="Телефон*" data-validate-field="tel" data-validate-rules="phone" class="form-input">
+                <input name="Email" type="email" placeholder="Email*" data-validate-field="email" class="form-input">
+                <button class="form-btn" type="submit">Заказать</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
